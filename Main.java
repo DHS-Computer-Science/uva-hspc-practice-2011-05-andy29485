@@ -66,9 +66,9 @@ public class Main {
                 map[k-1][l] = map[k][l]+1;
               }
             }
-            if(goalNear(k,l,map)) {
-              System.out.println("Shortest Path: "+map[k][l]+1);
-              break case_loop;
+            if(map[k][l] > 0 && goalNear(k,l,map)) {
+              System.out.println("Shortest Path: "+(map[k][l]+1));
+              continue case_loop;
             }
           }
         }
