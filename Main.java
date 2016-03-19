@@ -55,19 +55,23 @@ public class Main {
             if(map[k][l] > 0) {
               if(l+1 < map[k].length && map[k][l+1] == 0) {
                 map[k][l+1] = map[k][l]+1;
+                j++;
               }
-              if(l-1 >= 0 && map[k][l-1] == -1) {
+              if(l-1 >= 0 && map[k][l-1] == 0) {
                 map[k][l-1] = map[k][l]+1;
+                j++;
               }
               if(k+1 < map.length && map[k+1][l] == 0) {
                 map[k+1][l] = map[k][l]+1;
+                j++;
               }
               if(k-1 >= 0 && map[k-1][l] == 0) {
                 map[k-1][l] = map[k][l]+1;
+                j++;
               }
             }
             if(map[k][l] > 0 && goalNear(k,l,map)) {
-              System.out.println("Shortest Path: "+(map[k][l]+1));
+              System.out.println("Shortest Path: "+map[k][l]);
               continue case_loop;
             }
           }
