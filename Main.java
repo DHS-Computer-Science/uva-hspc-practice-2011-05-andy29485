@@ -25,12 +25,13 @@ public class Main {
     case_loop:
     for(int i=0; i<nCases; i++) {
       int H = scan.nextInt();
-      int W = scan.nextInt();
+      int W = scan.nextInt(); scan.nextLine();
 
       int[][] map = new int[H][W];
       for(int[] row : map) {
         int j = 0;
-        for(char c : scan.nextLine().toCharArray()) {
+        char[] line = scan.nextLine().toCharArray();
+        for(char c : line) {
           if(c == 'S') {
             row[j] = 1;
           }
@@ -67,6 +68,7 @@ public class Main {
             }
             if(goalNear(k,l,map)) {
               System.out.println("Shortest Path: "+map[k][l]+1);
+              break case_loop;
             }
           }
         }
